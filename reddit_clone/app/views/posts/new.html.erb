@@ -1,0 +1,22 @@
+<h2>New Post</h2>
+
+<form action="<%=posts_url%>" method="post" id="userform">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+ <input type="hidden" name="post[sub_id][]" value="<%=params[:sub_id]%>">
+  <label>Title <input type="text" name="post[title]" value=""></label>
+  <label>URL <input type="text" name="post[url]" value=""></label>
+
+  <input type="submit" value="New Post">
+  <ul>
+  <% Sub.all.each do |r_sub| %>
+ 
+
+  <% next if r_sub.id == params[:sub_id].to_i %>
+   <li>
+    <input type="checkbox" name="post[sub_id]" value="<%=r_sub.id%>"><%= r_sub.title %>
+   </li>
+  <% end %>
+  </ul>
+</form>
+
+<textarea name="post[content]" cols="30" rows="10" form="userform"></textarea>

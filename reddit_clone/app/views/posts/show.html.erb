@@ -1,0 +1,4 @@
+<h3><%=@post.title %></h3>
+<h3><%=@post.author.username %></h3>
+<h3><%=@post.content %></h3>
+<a href="<%=sub_url(@post.sub)%>">Back to <%= @post.sub.title %></a>

@@ -1,0 +1,12 @@
+<h3>New Sub!</h3>
+
+<form action="<%=subs_url%>" method="post" id="aaaaa">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label>Title<input type="text" name="sub[title]" value=""></label>
+
+    <input type="submit" value="Create Sub!">
+</form>
+
+<label>Description
+  <textarea name="sub[description]" form="aaaaa"></textarea>
+</label>
